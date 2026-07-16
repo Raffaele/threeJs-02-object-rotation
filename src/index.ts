@@ -7,11 +7,11 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const stars1Url = new URL('./imgs/stars.jpg', import.meta.url).toString();
+const starsUrl = new URL('./imgs/stars.jpg', import.meta.url).toString();
 
 const scene = new THREE.Scene();
 universeTextureLoader.load(
-  [stars1Url, stars1Url, stars1Url, stars1Url, stars1Url, stars1Url],
+  Array(6).fill(starsUrl),
   (texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     scene.background = texture;
